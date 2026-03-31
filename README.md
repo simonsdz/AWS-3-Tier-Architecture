@@ -44,7 +44,6 @@ This project implements a production-style three-tier architecture on AWS. The f
 ## Architecture
 
 ```
-<img width="415" height="582" alt="Screenshot 2026-03-22 at 11 48 55 PM" src="https://github.com/user-attachments/assets/efc61590-1b07-4d4e-98d2-ba65cddeffc3" />
 
 ```
 
