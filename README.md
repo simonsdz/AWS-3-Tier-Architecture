@@ -48,8 +48,8 @@ This project implements a production-style three-tier architecture on AWS. The f
 ```
 
 > **Note:** Add an architecture screenshot here once available.
-> Place the image at `architecture/architecture-diagram.png` and reference it as:
-> `![Architecture](architecture/architecture-diagram.png)`
+> Place the image at `architecture-diagram.png` and reference it as:
+> `![Architecture](architecture-diagram.png)`
 
 ### Traffic flow
 
