@@ -44,7 +44,7 @@ This project implements a production-style three-tier architecture on AWS. The f
 ## Architecture
 
 ```
-
+![Architecture](architecture-diagram.png)
 ```
 
 > **Note:** Add an architecture screenshot here once available.
