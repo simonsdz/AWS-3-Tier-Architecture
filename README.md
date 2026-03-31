@@ -44,42 +44,8 @@ This project implements a production-style three-tier architecture on AWS. The f
 ## Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│  VPC  10.0.0.0/16                                           │
-│                                                             │
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │  PUBLIC SUBNETS                                     │   │
-│  │                                                     │   │
-│  │   ┌─────────────────┐      ┌───────────────┐       │   │
-│  │   │  External NLB   │      │    Bastion    │       │   │
-│  │   │  Port 80 / 443  │      │  SSH gateway  │       │   │
-│  │   └────────┬────────┘      └───────┬───────┘       │   │
-│  └────────────│──────────────────────│────────────────┘   │
-│               │ (traffic)             │ (SSH)              │
-│  ┌────────────│──────────────────────│────────────────┐   │
-│  │  PRIVATE SUBNETS — PROXY TIER     │                │   │
-│  │            │                      │                │   │
-│  │   ┌────────▼────────┐      ┌──────▼──────────┐    │   │
-│  │   │  NGINX · ASG    │      │   CI/CD Tools   │    │   │
-│  │   │  Reverse proxy  │      │ Maven · SQ · JF │    │   │
-│  │   └────────┬────────┘      └─────────────────┘    │   │
-│  └────────────│───────────────────────────────────────┘   │
-│               │ Port 8080                                   │
-│  ┌────────────│───────────────────────────────────────┐   │
-│  │  PRIVATE SUBNETS — APPLICATION TIER                │   │
-│  │            │                                        │   │
-│  │   ┌────────▼────────┐      ┌───────────────────┐   │   │
-│  │   │ Spring Boot·ASG │─────▶│   RDS MySQL       │   │   │
-│  │   │  App servers    │ 3306 │  db.t3.micro       │   │   │
-│  │   └─────────────────┘      └───────────────────┘   │   │
-│  └────────────────────────────────────────────────────┘   │
-│                                                             │
-│   ┌────────────────┐                                       │
-│   │  NAT Instance  │  (outbound from private subnets)      │
-│   └────────────────┘                                       │
-└─────────────────────────────────────────────────────────────┘
-          ▲
-     Internet
+<img width="415" height="582" alt="Screenshot 2026-03-22 at 11 48 55 PM" src="https://github.com/user-attachments/assets/efc61590-1b07-4d4e-98d2-ba65cddeffc3" />
+
 ```
 
 > **Note:** Add an architecture screenshot here once available.
